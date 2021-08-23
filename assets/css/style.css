@@ -18,13 +18,20 @@ body {
 	margin: 0;
 }
 
+.title {
+	margin-top: 5vh;
+	margin-bottom: 3vh;
+}
+
 .search {
 	display: flex;
 	flex-direction: row-reverse;
 	max-width: 1200px;
+	margin-bottom: 3vh;
 }
 
 .search input {
+	color: #000;
 	width: 302px;
 	background-color: inherit;
 	border-top: none;
