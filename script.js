@@ -22,7 +22,7 @@ const colors = {
 const main_types = Object.keys(colors);
 
 const fetchPokemons = async () => {
-	for (let i = 1; i <= 20; i++) {
+	for (let i = 1; i <= 898; i++) {
 		await getPokemon(i);
 	}
 };
@@ -63,7 +63,7 @@ function createPokemonCard(pokemon) {
 				</div>
 			</div>
     	`;
-		
+
 		pokemonEl.innerHTML = pokeInnerHTML;
 		poke_container.appendChild(pokemonEl);
 	} else {
@@ -90,3 +90,20 @@ function createPokemonCard(pokemon) {
 }
 
 fetchPokemons();
+
+function myFunction() {
+    var input, filter, pokemon, name, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    pokemon = document.getElementsByClassName("pokemon");
+    for (i = 0; i < pokemon.length; i++) {
+        name = pokemon[i].getElementsByClassName("name")[0];
+        txtValue = name.textContent || name.innerText;
+		console.log(name);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            pokemon[i].style.display = "";
+        } else {
+            pokemon[i].style.display = "none";
+        }
+    }
+}

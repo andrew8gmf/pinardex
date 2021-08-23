@@ -18,6 +18,25 @@ body {
 	margin: 0;
 }
 
+.search {
+	display: flex;
+	flex-direction: row-reverse;
+	max-width: 1200px;
+}
+
+.search input {
+	width: 302px;
+	background-color: inherit;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 3px solid #000;
+}
+
+.search input:focus {
+	outline: none !important;
+}
+
 .poke-container {
 	display: flex;
 	flex-wrap: wrap;
