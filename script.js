@@ -45,27 +45,48 @@ function createPokemonCard(pokemon) {
 	
 	pokemonEl.style.backgroundColor = color;
 
-	const pokeInnerHTML = `
-        <div class="img-container">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-							pokemon.id
-						}.png" alt="${name}" />
-            <span class="number">#${pokemon.id
-                        .toString()
-                        .padStart(3, '0')}</span>
-        </div>
-        <div class="info">
-			<div class="name"><h3>${name}</h3></div>
-			<div class="types">
-				<div class="type"><small><span>${type.toUpperCase()}</span></small></div>
-				<div class="type"><small><span>${type.toUpperCase()}</span></small></div>
+	if (poke_types[1]) {
+		const pokeInnerHTML = `
+			<div class="img-container">
+				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+								pokemon.id
+							}.png" alt="${name}" />
+				<span class="number">#${pokemon.id
+							.toString()
+							.padStart(3, '0')}</span>
 			</div>
-		</div>
-    `;
+			<div class="info">
+				<div class="name"><h3>${name}</h3></div>
+				<div class="types">
+					<div class="type"><small><span>${poke_types[0].toUpperCase()}</span></small></div>
+					<div class="type"><small><span>${poke_types[1].toUpperCase()}</span></small></div>
+				</div>
+			</div>
+    	`;
+		
+		pokemonEl.innerHTML = pokeInnerHTML;
+		poke_container.appendChild(pokemonEl);
+	} else {
+		const pokeInnerHTML = `
+			<div class="img-container">
+				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+								pokemon.id
+							}.png" alt="${name}" />
+				<span class="number">#${pokemon.id
+							.toString()
+							.padStart(3, '0')}</span>
+			</div>
+			<div class="info">
+				<div class="name"><h3>${name}</h3></div>
+				<div class="types">
+					<div class="type"><small><span>${poke_types[0].toUpperCase()}</span></small></div>
+				</div>
+			</div>
+    	`;
 
-	pokemonEl.innerHTML = pokeInnerHTML;
-
-	poke_container.appendChild(pokemonEl);
+		pokemonEl.innerHTML = pokeInnerHTML;
+		poke_container.appendChild(pokemonEl);
+	}
 }
 
 fetchPokemons();
