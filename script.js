@@ -55,9 +55,12 @@ function createPokemonCard(pokemon) {
                         .padStart(3, '0')}</span>
         </div>
         <div class="info">
-            <h3 class="name">${name}</h3>
-            <small class="type">Type: <span>${type}</span></small>
-        </div>
+			<div class="name"><h3>${name}</h3></div>
+			<div class="types">
+				<div class="type"><small><span>${type.toUpperCase()}</span></small></div>
+				<div class="type"><small><span>${type.toUpperCase()}</span></small></div>
+			</div>
+		</div>
     `;
 
 	pokemonEl.innerHTML = pokeInnerHTML;
